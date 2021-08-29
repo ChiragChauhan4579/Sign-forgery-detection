@@ -41,7 +41,7 @@ Start the server
 
 After importing the dataset, the images are combined in pair of 2 as combination of either real-real or real-fake signatures. By using the for loop the images are resized and returned properly with the function.
 
-```bash
+```python
 def read_data(dir, data):
     images1 = [] 
     images2 = [] 
@@ -77,7 +77,7 @@ train_images2 = train_images2.reshape(-1, size, size, 1)
 A simple CNN base network and a function to calculate the euclidean distance between images and then a function on how would be the shape of that returned distance.
 
 
-```bash
+```python
 def initialize_base_network(input_shape):
     clf = Sequential()
     clf.add(Convolution2D(64, (3,3),input_shape=input_shape))
@@ -100,7 +100,7 @@ def eucl_dist_output_shape(shapes):
 
 With the help of Model function of keras one can make the model as follow. The distance is calculated into the lambda layer.
 
-```bash
+```python
 input_dim = (100, 100, 1)
 base_network = initialize_base_network(input_dim)
 img_a = Input(shape=input_dim)
@@ -115,7 +115,7 @@ model.summary()
 
 Now the model can be trained as
 
-```bash
+```python
 adam = tf.keras.optimizers.Adam(lr=0.00008)
 model.compile(loss='categorical_crossentropy',optimizer=adam,metrics=['accuracy'])
 model.fit([train_images1,train_images2],train_labels,validation_split=.30,batch_size=32,epochs=40)

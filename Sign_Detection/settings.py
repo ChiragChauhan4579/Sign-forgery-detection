@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'Sign_Detection.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dde2p6psi9tpvv',
-        'USER':'wksflypuruyyrg',
-        'PASSWORD':'3775d97fa5dbe1917e7e0d529e80f7a1bbdc4f63bdec11600e19cb45a19bcea7',
-        'HOST':'ec2-107-21-10-179.compute-1.amazonaws.com',
-        'PORT':'5432'
+        'NAME': '',
+        'USER':'',
+        'PASSWORD':'',
+        'HOST':'',
+        'PORT':''
     }
 }
 

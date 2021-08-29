@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+  <title>Sign Forgery Detection</title>
+  <style>
+    body {
+      background: transparent;
+    }
+
+    body {
+
+      /* width: 100%;
+      height: 100%; */
+      background: linear-gradient(-45deg, #2c3e50, #3498db, #7b4397, #dc2430, #fcb045);
+      background-size: 400% 400%;
+      -webkit-animation: gradient 5s ease infinite;
+      animation: gradient 5s ease infinite;
+    }
+
+    @-webkit-keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h2 {
+      color: floralwhite;
+      font-weight: bolder;
+      font-family: sans-serif;
+      font-size: 38px;
+      border-bottom: 3px ridge gray;
+    }
+    .button{
+      margin: 40px;
+    }
+
+    .result {
+      color: black;
+      font-size: 32px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- heading  -->
+  <div style="text-align: center; margin-top:18px">
+    <h2>Sign Forgery Detection</h2>
+  </div>
+
+  <!-- main container  -->
+
+  <div class=" container">
+    <div class="row">
+      <div class="col-12  align-self-center" style="margin-left:350px;margin-top: 40px;">
+        <form method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ Form }}
+          <div class ="col-12 button" style="margin-left: 245px;margin-top: 50px;">
+          <input class="btn btn-primary btn-lg" type='submit' value="submit">
+          </div>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- result  -->
+
+  <div class="result" style="margin-top: 62px;">
+    {{ Note }} 
+  </div>
+
+  <!-- js link  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
